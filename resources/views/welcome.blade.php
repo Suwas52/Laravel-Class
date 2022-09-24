@@ -7,28 +7,50 @@
     <title>Document</title>
     <style>
         body{
+
             background-color: lightblue;
-            text-align: center;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align:center;
+            color: #cf2e2e;
         }
         
         .container {
-            color: #fff;
+            color: darkblue;
         }
+
+        h1{
+            color: blue;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: rgb(65,88,208);
+        }
+
+        
        
     </style>
 </head>
 <body>
-    <h1>{{$header}}</h1>
+    <h1 class="header">{{$header}}</h1>
 
 
         @foreach($articles as $value)
             <!-- HTML tag here -->
         <div class="container">
-            <h1>{{ $value['title']}} </h1>
-            <p>{{ $value['desc']}}</p>
+            <h1>  <a href="article/{{$value['id']}}">{{ $value['title']}}</a>   </h1>
+            <p>   {{ $value['desc']}}</p>
         </div>
         
         @endforeach
+
+        
       
 
         <!-- HTML tag close here  -->

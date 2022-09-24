@@ -6,14 +6,26 @@
         public static function getAllArticles() {
             return [
                 [
-                    'title' => "Some one",
+                    'id' => '1',
+                    'title' => "News one",
                     'desc' => "Some  random details"
                 ],
                 [
-                    'title' => "Some one",
+                    'id' => '2', 
+                    'title' => "News Two",
                     'desc' => "Some  random details"
                 ],
             ];
+        }
+
+        public static function getSingleArticles($id) {
+            $articles = self::getAllArticles();
+
+            foreach($articles as $values){
+                if ($values['id']===$id) {
+                    return $values;
+                }
+            }
         }
     }
 ?>

@@ -22,3 +22,9 @@ Route::get('/', function () {
     ]);
     
 });
+
+Route::get('/article/{id}', function ($id) {
+    return view('article', [
+    'articles' =>  Article::getSingleArticles($id)
+    ]);
+});
